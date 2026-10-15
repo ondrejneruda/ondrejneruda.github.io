@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Components — reusable building blocks for every page.
+   ========================================================================== */
+
+/* --- Label: small mono caption, used for section numbers and meta -------- */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* --- Site header ---------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+}
+.brand {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: var(--weight-regular);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav { display: flex; align-items: center; gap: var(--space-5); }
+/* The name and links in the top bar go from regular to bold on hover. The font is
+   monospaced, so bold letters are exactly as wide and nothing shifts. */
+.nav a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: var(--weight-regular);
+  transition: font-weight var(--dur-fast) var(--ease-out);
+}
+/* Hover on desktop; on touch screens :active makes it bold while the
+   finger is down. The link for the current page stays bold. */
+.brand:hover,
+.brand:focus-visible,
+.brand:active,
+.nav a:hover,
+.nav a:focus-visible,
+.nav a:active,
+.nav a[aria-current="page"] {
+  font-weight: var(--weight-bold);
+  color: var(--text);
+}
+/* --- Menu button: only on phones, opens the links as a dropdown ------- */
+.menu-toggle {
+  display: none;
+  padding: var(--space-2) 0 var(--space-2) var(--space-4);
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: var(--weight-regular);
+  cursor: pointer;
+}
+.menu-toggle:hover,
+.menu-toggle:active,
+.menu-toggle[aria-expanded="true"] { font-weight: var(--weight-bold); }
+
+@media (max-width: 560px) {
+  .menu-toggle { display: block; }
+
+  /* The links drop down under the top bar as a right-aligned list. */
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    padding: var(--space-2) var(--gutter) var(--space-4);
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition: opacity var(--dur-fast) var(--ease-out),
+                transform var(--dur-fast) var(--ease-out),
+                visibility 0s linear var(--dur-fast);
+  }
+  .nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+  .nav a {
+    padding-block: var(--space-3);   /* comfortable tap targets */
+    font-size: var(--step-1);
+  }
+}
+
+/* --- Stage: full-height black area that centres its content ------------ */
+.stage {
+  min-height: calc(100vh - 4.5rem);   /* viewport minus the top bar */
+  min-height: calc(100svh - 4.5rem);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--space-6);
+  padding: var(--gutter);
+}
+.stage__figure { position: relative; display: grid; place-items: center; }
+
+/* --- Keywords: short descriptors under the figure ----------------------- */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-5);
+  max-width: 48rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  text-align: center;
+}
+.keywords li { white-space: nowrap; }
+@media (max-width: 560px) {
+  .keywords { gap: var(--space-1) var(--space-4); }
+}
+
+/* --- Spinner: an image that rotates continuously ------------------------ */
+.spinner {
+  width: auto;
+  height: var(--sprite-height);
+  object-fit: contain;
+  image-rendering: pixelated;   /* keeps small pixel-art crisp when scaled up */
+  animation: spin var(--spin-duration) linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate3d(var(--spin-axis), 0turn); }
+  to   { transform: rotate3d(var(--spin-axis), 1turn); }
+}
+
+/* Respect visitors who ask for less motion: show the image still. */
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}
+
+/* --- Sprite 3D: pixel image with one pixel of thickness (sprite3d.js) --- */
+.stage { perspective: 2400px; }
+.sprite3d {
+  position: relative;
+  transform-style: preserve-3d;
+}
+.sprite3d__face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+.sprite3d__face--image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+/* The original <img> stays in the layout (invisible) so CSS keeps sizing it. */
+.sprite3d__source {
+  position: absolute;
+  visibility: hidden;
+  animation: none;
+}

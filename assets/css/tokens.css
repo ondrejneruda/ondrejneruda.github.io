@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Design tokens — the single place to customise the whole site.
+   Every page and component reads from these variables; change a value
+   here and it propagates everywhere.
+   ========================================================================== */
+
+:root {
+  /* --- Type families ----------------------------------------------------- */
+  /* One typeface for the whole site: Azeret Mono. */
+  --font-mono: "Azeret Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-mono);
+  --font-body: var(--font-mono);
+
+  /* --- Font weights (only the weights loaded in index.html are available) */
+  --weight-regular: 400;
+  --weight-bold: 800;
+
+  /* --- Type scale (fluid, min → max between 360px and 1280px) ------------ */
+  --step--1: clamp(0.83rem, 0.80rem + 0.15vw, 0.92rem);
+  --step-0:  clamp(1.00rem, 0.96rem + 0.20vw, 1.13rem);
+  --step-1:  clamp(1.20rem, 1.12rem + 0.40vw, 1.45rem);
+  --step-2:  clamp(1.44rem, 1.28rem + 0.75vw, 1.90rem);
+  --step-3:  clamp(1.73rem, 1.45rem + 1.30vw, 2.60rem);
+  --step-4:  clamp(2.30rem, 1.70rem + 2.80vw, 4.20rem);
+  --step-5:  clamp(3.00rem, 1.90rem + 5.20vw, 7.00rem);
+
+  /* --- Spacing (8px rhythm) ---------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  /* --- Layout ------------------------------------------------------------ */
+  --measure: 62ch;            /* comfortable reading width */
+  --page-max: 76rem;          /* outer content width */
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --radius-s: 4px;
+  --radius-m: 10px;
+  --radius-l: 22px;
+
+  /* --- Motion ------------------------------------------------------------ */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-med: 320ms;
+
+  /* --- Palette: raw values ("stage" = dark, "paper" = light) ------------- */
+  --ink-950: #0d0c0b;
+  --ink-900: #161412;
+  --ink-800: #211e1b;
+  --ink-600: #4a453f;
+  --ink-400: #8a8278;
+  --paper-50:  #faf7f1;
+  --paper-100: #f2ede3;
+  --paper-200: #e4ddcf;
+  --amber-400: #ffb43a;       /* warm LED — primary accent */
+  --amber-600: #c47a00;
+  --cyan-300:  #6fe7dc;       /* cold LED — secondary accent */
+  --cyan-700:  #0f7f76;
+
+  /* --- Semantic colours ------------------------------------------------- */
+  --bg: #0f0f0f;              /* very dark grey page background */
+  --bg-raised: var(--ink-900);
+  --text: var(--paper-100);
+  --text-muted: var(--ink-400);
+  --line: var(--ink-800);
+  --accent: var(--amber-400);
+  --accent-2: var(--cyan-300);
+  --accent-glow: rgba(255, 180, 58, 0.35);
+  --selection: rgba(242, 237, 227, 0.25);
+
+  /* --- Spinning image ---------------------------------------------------- */
+  --sprite-height: 50svh;     /* height of the spinning figure: half the screen */
+  --spin-duration: 12s;       /* one full turn */
+  --sprite-depth: 1;          /* thickness of the spinning figure, in image pixels */
+  --spin-axis: 0, 1, 0;       /* 0, 1, 0 = turntable (around vertical axis); 0, 0, 1 = flat like a wheel */
+}
+
+/* Older browsers without svh units fall back to plain vh. */
+@supports not (height: 1svh) {
+  :root { --sprite-height: 50vh; }
+}

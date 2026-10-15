@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ondřej Neruda</title>
+  <meta name="description" content="Ondřej Neruda: personal and professional website.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;800&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">Ondřej Neruda</a>
+      <!-- Phones: the links fold into a dropdown opened by this button (menu.js) -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <!-- About and Work stay hidden until their pages exist; then remove `hidden` and set href -->
+        <a href="#" hidden>About</a>
+        <a href="#" hidden>Work</a>
+        <a href="mailto:ondrej.neruda@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="stage" id="top">
+    <div class="stage__figure">
+      <!-- Drop your image at assets/img/hero.png; the placeholder shows until then. -->
+      <img class="spinner" data-sprite3d src="assets/img/hero.png" alt="Ondřej Neruda"
+           onerror="this.onerror=null; this.src='assets/img/placeholder.svg';">
+    </div>
+    <ul class="keywords" aria-label="What I do">
+      <li>AI research</li>
+      <li>Agentic AI</li>
+      <li>Adversarial ML</li>
+      <li>Software development</li>
+      <li>LED &amp; fire shows</li>
+      <li>Hands-on maker</li>
+      <li>Prague</li>
+    </ul>
+  </main>
+
+  <script src="assets/js/sprite3d.js" defer></script>
+  <script src="assets/js/menu.js" defer></script>
+
+</body>
+</html>
