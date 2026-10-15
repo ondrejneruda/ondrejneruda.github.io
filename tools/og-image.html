@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Source for assets/og-image.png, the preview image shown when the link is shared.
+     Regenerate with tools/make-og-image.sh after changing this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;800&display=swap">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: center;
+    padding: 0 80px 0 60px;
+    box-sizing: border-box;
+  }
+  .figure { height: 560px; image-rendering: pixelated; justify-self: center; }
+  h1 { margin: 0; font-size: 72px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+  ul { margin: 36px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px 28px;
+       font-size: 26px; color: var(--text-muted); }
+  .url { margin-top: 48px; font-size: 24px; }
+</style>
+</head>
+<body>
+  <img class="figure" src="../assets/img/hero.png" alt="">
+  <div>
+    <h1>Ondřej Neruda</h1>
+    <ul>
+      <li>AI research</li>
+      <li>Agentic AI</li>
+      <li>Adversarial ML</li>
+      <li>Software development</li>
+      <li>LED &amp; fire shows</li>
+      <li>Hands-on maker</li>
+    </ul>
+    <p class="url">ondrejneruda.github.io</p>
+  </div>
+</body>
+</html>
