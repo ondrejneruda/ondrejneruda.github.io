@@ -26,3 +26,5 @@ New pages reuse the same stylesheets and components.
 ## Hosting
 
 Live on GitHub Pages at https://ondrejneruda.github.io (repo `ondrejneruda/ondrejneruda.github.io`, served from the root of `main`). To publish changes, commit and `git push`; the site updates within a minute or two. `.nojekyll` turns off Jekyll processing. GitHub's servers are case-sensitive, so file names in links must match exactly.
+
+CSS and JS links carry a `?v=…` version so visitors get fresh files right after an update (GitHub Pages lets browsers cache files for 10 minutes). Bump it whenever those files change.
