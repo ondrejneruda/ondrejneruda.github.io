@@ -23,4 +23,4 @@ New pages reuse the same stylesheets and components.
 
 ## Hosting
 
-Planned for GitHub Pages at `ondrejneruda.github.io` (repo of that name, served from the root of `main`). Everything is static and uses relative paths, so it works there as-is; `.nojekyll` turns off Jekyll processing. Note that GitHub's servers are case-sensitive, so file names in links must match exactly.
+Live on GitHub Pages at https://ondrejneruda.github.io (repo `ondrejneruda/ondrejneruda.github.io`, served from the root of `main`). To publish changes, commit and `git push`; the site updates within a minute or two. `.nojekyll` turns off Jekyll processing. GitHub's servers are case-sensitive, so file names in links must match exactly.
