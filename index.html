@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/fool-the-net.css">
 </head>
 <body>
 
@@ -57,8 +58,28 @@
     </ul>
   </main>
 
+  <!-- "Fool the network": one adversarial example from my thesis per visit -->
+  <section class="wrap section" id="fool-the-net" aria-labelledby="ftn-title">
+    <p class="label">Adversarial ML</p>
+    <div class="ftn" data-fool-the-net data-img-base="assets/img/adversarial/">
+      <h2 class="ftn__title" id="ftn-title">What's in this picture?</h2>
+      <div class="ftn__frame"><img class="ftn__img" alt="A photo. Type what you see in it." width="224" height="224" loading="lazy"></div>
+      <form class="ftn__form" autocomplete="off">
+        <input class="ftn__input" type="text" placeholder="type what you see" aria-label="What's in this picture?" autocapitalize="off" enterkeyhint="go" required>
+        <button class="ftn__btn" type="submit">check</button>
+      </form>
+      <div class="ftn__reveal" hidden aria-live="polite">
+        <p class="ftn__verdict"></p>
+        <p class="ftn__model"></p>
+        <p class="ftn__why"></p>
+        <a class="ftn__link" href="https://github.com/ondrejneruda/Adversarial-Examples-in-Image-Classification">from my bachelor's thesis →</a>
+      </div>
+    </div>
+  </section>
+
   <script src="assets/js/sprite3d.js" defer></script>
   <script src="assets/js/menu.js" defer></script>
+  <script src="assets/js/fool-the-net.js" defer></script>
 
 </body>
 </html>

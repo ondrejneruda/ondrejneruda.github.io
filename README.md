@@ -18,6 +18,8 @@ Then open http://localhost:4173.
 - `assets/css/components.css`: reusable components (top bar, stage, spinner, 3D sprite)
 - `assets/js/sprite3d.js`: turns `assets/img/hero.png` into a 3D slab with thickness
 - `assets/img/`: images (`hero.png` is the spinning figure)
+- `assets/js/fool-the-net.js`, `assets/css/fool-the-net.css`, `assets/img/adversarial/`: "What's in this picture?" section, one adversarial example from the thesis per visit
+- `tools/`: `og-image.html` + `make-og-image.sh` render the link preview image `assets/og-image.png`
 
 New pages reuse the same stylesheets and components.
 
