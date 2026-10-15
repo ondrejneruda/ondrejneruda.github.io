@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game · Ondřej Neruda</title>
+  <meta name="description" content="Ondřej Neruda: AI research, agentic and adversarial AI, software development, LED & fire shows, hands-on making. Prague.">
+  <!-- Link preview when the site is shared (Open Graph / social cards).
+       The image is rendered from tools/og-image.html by tools/make-og-image.sh. -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ondrejneruda.github.io/game.html">
+  <meta property="og:title" content="What's in this picture? · Ondřej Neruda">
+  <meta property="og:description" content="AI research, agentic and adversarial AI, software development, LED & fire shows, hands-on making. Prague.">
+  <meta property="og:image" content="https://ondrejneruda.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pixel-art figure of Ondřej Neruda next to his name and keywords">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;800&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/fool-the-net.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">Ondřej Neruda</a>
+      <!-- Phones: the links fold into a dropdown opened by this button (menu.js) -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <!-- About and Work stay hidden until their pages exist; then remove `hidden` and set href -->
+        <a href="#" hidden>About</a>
+        <a href="#" hidden>Work</a>
+        <a href="game.html" aria-current="page">Game</a>
+        <a href="mailto:ondrej.neruda@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- "Fool the network": one adversarial example from my thesis per visit -->
+    <section class="game" id="fool-the-net" aria-labelledby="ftn-title">
+      <p class="label">Adversarial ML</p>
+      <div class="ftn" data-fool-the-net data-img-base="assets/img/adversarial/">
+        <h2 class="ftn__title" id="ftn-title">What's in this picture?</h2>
+        <div class="ftn__frame"><img class="ftn__img" alt="A photo. Type what you see in it." width="224" height="224" loading="lazy"></div>
+        <form class="ftn__form" autocomplete="off">
+          <input class="ftn__input" type="text" placeholder="type what you see" aria-label="What's in this picture?" autocapitalize="off" enterkeyhint="go" required>
+          <button class="ftn__btn" type="submit">check</button>
+        </form>
+        <div class="ftn__reveal" hidden aria-live="polite">
+          <p class="ftn__verdict"></p>
+          <p class="ftn__model"></p>
+          <p class="ftn__why"></p>
+          <a class="ftn__link" href="https://github.com/ondrejneruda/Adversarial-Examples-in-Image-Classification">from my bachelor's thesis →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/menu.js" defer></script>
+  <script src="assets/js/fool-the-net.js" defer></script>
+
+</body>
+</html>

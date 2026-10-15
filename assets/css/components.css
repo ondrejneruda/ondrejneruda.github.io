@@ -173,3 +173,14 @@
   visibility: hidden;
   animation: none;
 }
+
+/* --- Page: content pages under the top bar (e.g. game.html) ------------- */
+.page {
+  min-height: calc(100vh - 4.5rem);
+  min-height: calc(100svh - 4.5rem);
+  display: grid;
+  place-items: center;
+  padding: var(--space-6) var(--gutter) var(--space-8);
+}
+.game { width: 100%; max-width: 28rem; }
+.game > .label { margin-bottom: var(--space-3); }
