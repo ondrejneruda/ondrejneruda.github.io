@@ -50,3 +50,22 @@
 .ftn__verdict { font-size: var(--step-3); font-weight: var(--weight-bold); line-height: 1.1; }
 .ftn__why { color: var(--text-muted); font-size: var(--step--1); }
 .ftn__link { font-size: var(--step--1); display: inline-block; }
+
+/* Shock: the visitor typed exactly what the fooled network sees */
+.ftn--shock .ftn__verdict {
+  font-size: var(--step-4);
+  color: var(--text);   /* site is black and white only, no yellow */
+  animation: ftn-shake 0.5s var(--ease-out) 2;
+}
+.ftn--shock .ftn__frame { animation: ftn-flash 0.6s steps(2) 3; }
+
+@keyframes ftn-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-6px) rotate(-2deg); }
+  40% { transform: translateX(6px) rotate(2deg); }
+  60% { transform: translateX(-4px) rotate(-1deg); }
+  80% { transform: translateX(4px) rotate(1deg); }
+}
+@keyframes ftn-flash {
+  50% { filter: invert(1); }
+}
