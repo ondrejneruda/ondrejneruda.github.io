@@ -12,7 +12,8 @@ Then open http://localhost:4173.
 
 ## Structure
 
-- `index.html`: home page (top bar + spinning figure on black)
+- `index.html`: the whole site on one page: landing (spinning figure + keywords), `#game`, `#contact`; top bar links jump to each section
+- `game.html`, `contact.html`: redirects to `#game` / `#contact` for older links
 - `assets/css/tokens.css`: **design tokens** (colours, type, spacing, sprite size/depth/spin). Customise the whole site from here.
 - `assets/css/base.css`: reset, typography and layout primitives
 - `assets/css/components.css`: reusable components (top bar, stage, spinner, 3D sprite)

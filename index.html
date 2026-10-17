@@ -20,9 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;800&display=swap">
-  <link rel="stylesheet" href="assets/css/tokens.css?v=202610172311">
-  <link rel="stylesheet" href="assets/css/base.css?v=202610172311">
-  <link rel="stylesheet" href="assets/css/components.css?v=202610172311">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=202610172322">
+  <link rel="stylesheet" href="assets/css/base.css?v=202610172322">
+  <link rel="stylesheet" href="assets/css/components.css?v=202610172322">
+  <link rel="stylesheet" href="assets/css/fool-the-net.css?v=202610172322">
 </head>
 <body>
 
@@ -35,13 +36,16 @@
         <!-- About and Work stay hidden until their pages exist; then remove `hidden` and set href -->
         <a href="#" hidden>About</a>
         <a href="#" hidden>Work</a>
-        <a href="game.html">Game</a>
-        <a href="contact.html">Contact</a>
+        <a href="#game">Game</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="stage" id="top">
+  <main>
+
+  <!-- Landing: spinning figure and keywords -->
+  <div class="stage" id="top">
     <div class="stage__figure">
       <!-- Drop your image at assets/img/hero.png; the placeholder shows until then. -->
       <img class="spinner" data-sprite3d src="assets/img/hero.png" alt="Ondřej Neruda"
@@ -56,10 +60,65 @@
       <li>Hands-on maker</li>
       <li>Prague</li>
     </ul>
+  </div>
+
+  <!-- Game: one adversarial example from my thesis per visit -->
+  <div class="page" id="game">
+    <section class="game" id="fool-the-net" aria-labelledby="ftn-title">
+      <p class="label">Adversarial ML</p>
+      <div class="ftn" data-fool-the-net data-img-base="assets/img/adversarial/">
+        <h2 class="ftn__title" id="ftn-title">What's in this picture?</h2>
+        <div class="ftn__frame"><img class="ftn__img" alt="A photo. Type what you see in it." width="224" height="224" loading="lazy"></div>
+        <form class="ftn__form" autocomplete="off">
+          <input class="ftn__input" type="text" placeholder="type what you see" aria-label="What's in this picture?" autocapitalize="off" enterkeyhint="go" required>
+          <button class="ftn__btn" type="submit">check</button>
+        </form>
+        <div class="ftn__reveal" hidden aria-live="polite">
+          <p class="ftn__verdict"></p>
+          <p class="ftn__model"></p>
+          <p class="ftn__why"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact: one row per platform -->
+  <div class="page" id="contact">
+    <section class="contact" aria-labelledby="contact-title">
+      <p class="label">Contact</p>
+      <h2 class="contact__title" id="contact-title">Find me here</h2>
+      <!-- One row per platform. To add one, copy a <li> and change the name and link. -->
+      <ul class="contact__list">
+        <li>
+          <span class="contact__name">Email</span>
+          <!-- The address is not written here in plain form, so spam bots scanning
+               the page can't harvest it. contact.js decodes it when "show" is clicked. -->
+          <span class="contact__value" data-email="moc.liamg#aduren.jerdno">
+            <button class="contact__copy contact__reveal" type="button">show email</button>
+          </span>
+        </li>
+        <li>
+          <span class="contact__name">GitHub</span>
+          <a class="contact__link" href="https://github.com/ondrejneruda" target="_blank" rel="noopener">ondrejneruda</a>
+        </li>
+        <li>
+          <span class="contact__name">itch.io</span>
+          <a class="contact__link" href="https://n3r000.itch.io" target="_blank" rel="noopener">n3r000</a>
+        </li>
+        <li>
+          <span class="contact__name">ČSFD</span>
+          <a class="contact__link" href="https://www.csfd.cz/uzivatel/1016516-n3r000/prehled/" target="_blank" rel="noopener">n3r000</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
   </main>
 
-  <script src="assets/js/sprite3d.js?v=202610172311" defer></script>
-  <script src="assets/js/menu.js?v=202610172311" defer></script>
+  <script src="assets/js/sprite3d.js?v=202610172322" defer></script>
+  <script src="assets/js/menu.js?v=202610172322" defer></script>
+  <script src="assets/js/fool-the-net.js?v=202610172322" defer></script>
+  <script src="assets/js/contact.js?v=202610172322" defer></script>
 
 </body>
 </html>
