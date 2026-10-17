@@ -1,19 +1,36 @@
 // ==========================================================================
-// Contact page: "copy" buttons put a value (e.g. the email) on the clipboard
-// and confirm with "copied" for a moment.
+// Contact page.
+// Email: the address is stored reversed with "#" for "@" in [data-email], so
+// it never appears in the page source as an address that bots can harvest.
+// "show email" decodes it and swaps in the address plus a "copy" button.
 // ==========================================================================
 
 (() => {
-  for (const button of document.querySelectorAll("[data-copy]")) {
-    const label = button.textContent;
+  const copyButton = (value) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "contact__copy";
+    button.textContent = "copy";
     button.addEventListener("click", async () => {
       try {
-        await navigator.clipboard.writeText(button.dataset.copy);
+        await navigator.clipboard.writeText(value);
         button.textContent = "copied";
       } catch (e) {
         button.textContent = "select and copy it";
       }
-      setTimeout(() => { button.textContent = label; }, 1600);
+      setTimeout(() => { button.textContent = "copy"; }, 1600);
+    });
+    return button;
+  };
+
+  for (const holder of document.querySelectorAll("[data-email]")) {
+    const reveal = holder.querySelector(".contact__reveal");
+    reveal?.addEventListener("click", () => {
+      const address = [...holder.dataset.email].reverse().join("").replace("#", "@");
+      const text = document.createElement("span");
+      text.className = "contact__email";
+      text.textContent = address;
+      holder.replaceChildren(text, copyButton(address));
     });
   }
 })();
