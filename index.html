@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;800&display=swap">
-  <link rel="stylesheet" href="assets/css/tokens.css?v=202610172322">
-  <link rel="stylesheet" href="assets/css/base.css?v=202610172322">
-  <link rel="stylesheet" href="assets/css/components.css?v=202610172322">
-  <link rel="stylesheet" href="assets/css/fool-the-net.css?v=202610172322">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=202610172338">
+  <link rel="stylesheet" href="assets/css/base.css?v=202610172338">
+  <link rel="stylesheet" href="assets/css/components.css?v=202610172338">
+  <link rel="stylesheet" href="assets/css/fool-the-net.css?v=202610172338">
 </head>
 <body>
 
@@ -33,9 +33,9 @@
       <!-- Phones: the links fold into a dropdown opened by this button (menu.js) -->
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="nav" id="site-nav" aria-label="Main">
-        <!-- About and Work stay hidden until their pages exist; then remove `hidden` and set href -->
-        <a href="#" hidden>About</a>
+        <!-- Work stays hidden until it has content; then remove `hidden` and set href -->
         <a href="#" hidden>Work</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="#game">Game</a>
       </nav>
@@ -60,6 +60,43 @@
       <li>Hands-on maker</li>
       <li>Prague</li>
     </ul>
+  </div>
+
+  <!-- About: short intro, then a compact CV timeline -->
+  <div class="page" id="about">
+    <section class="about" aria-labelledby="about-title">
+      <p class="label">About</p>
+      <h2 class="about__title" id="about-title">Hi, I'm Ondřej.</h2>
+      <div class="about__text">
+        <p>I study artificial intelligence at Charles University in Prague, where my thesis is about adversarial examples: tiny, invisible changes to an image that completely fool a neural network. Lately I'm also into agentic AI.</p>
+        <p>Since 2018 I've been building software and hardware for LED and fire shows at Pyroterra / Lighttoys, and travelling with the crew as a show technician.</p>
+        <p>When I'm not at a keyboard, I'm usually making something with my hands, riding a bike, hiking or snowboarding.</p>
+      </div>
+
+      <ol class="timeline" aria-label="CV">
+        <li>
+          <span class="timeline__when">2024 – now</span>
+          <div><p class="timeline__what">Prg.ai Minor</p><p class="timeline__where">AI programme of Charles University &amp; Czech Technical University</p></div>
+        </li>
+        <li>
+          <span class="timeline__when">2021 – now</span>
+          <div><p class="timeline__what">Bc. Artificial Intelligence</p><p class="timeline__where">Faculty of Mathematics and Physics, Charles University. Thesis: adversarial examples for deep neural networks</p></div>
+        </li>
+        <li>
+          <span class="timeline__when">2018 – now</span>
+          <div><p class="timeline__what">Pyroterra / Lighttoys</p><p class="timeline__where">Software developer (LTComposer, for programming LED props and DMX devices), hardware developer of custom LED props, show manager and technician</p></div>
+        </li>
+        <li>
+          <span class="timeline__when">2016 – 2018</span>
+          <div><p class="timeline__what">Freelance web developer</p><p class="timeline__where">E-shops with custom features</p></div>
+        </li>
+      </ol>
+
+      <ul class="about__facts">
+        <li>Python, PyTorch, TensorFlow, scikit-learn, C#</li>
+        <li>Czech, English, some German</li>
+      </ul>
+    </section>
   </div>
 
   <!-- Contact: one row per platform -->
@@ -115,10 +152,10 @@
 
   </main>
 
-  <script src="assets/js/sprite3d.js?v=202610172322" defer></script>
-  <script src="assets/js/menu.js?v=202610172322" defer></script>
-  <script src="assets/js/fool-the-net.js?v=202610172322" defer></script>
-  <script src="assets/js/contact.js?v=202610172322" defer></script>
+  <script src="assets/js/sprite3d.js?v=202610172338" defer></script>
+  <script src="assets/js/menu.js?v=202610172338" defer></script>
+  <script src="assets/js/fool-the-net.js?v=202610172338" defer></script>
+  <script src="assets/js/contact.js?v=202610172338" defer></script>
 
 </body>
 </html>
