@@ -184,3 +184,44 @@
 }
 .game { width: 100%; max-width: 28rem; }
 .game > .label { margin-bottom: var(--space-3); }
+
+/* --- Contact page: one row per platform ---------------------------------- */
+.contact { width: 100%; max-width: 36rem; }
+.contact > .label { margin-bottom: var(--space-3); }
+.contact__title { font-size: var(--step-3); font-weight: var(--weight-bold); }
+.contact__list { list-style: none; padding: 0; margin-top: var(--space-6); }
+.contact__list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-5);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+.contact__list li:first-child { border-top: 1px solid var(--line); }
+.contact__name { font-size: var(--step--1); color: var(--text-muted); }
+.contact__value { display: inline-flex; align-items: baseline; gap: var(--space-4); min-width: 0; }
+.contact__email { overflow-wrap: anywhere; }
+
+/* Links and the copy button: regular, bold on hover / focus / tap, like the nav */
+.contact__link,
+.contact__copy {
+  font: inherit;
+  font-weight: var(--weight-regular);
+  color: var(--text);
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.contact__copy { font-size: var(--step--1); color: var(--text-muted); }
+.contact__link:hover, .contact__link:focus-visible, .contact__link:active,
+.contact__copy:hover, .contact__copy:focus-visible, .contact__copy:active { font-weight: var(--weight-bold); color: var(--text); }
+
+/* Phones: name above value */
+@media (max-width: 560px) {
+  .contact__list li { flex-direction: column; align-items: flex-start; }
+}
