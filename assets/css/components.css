@@ -234,6 +234,7 @@
 .about__text p + p { margin-top: var(--space-4); }
 
 .timeline { list-style: none; padding: 0; margin-top: var(--space-7); }
+.about > .label + .timeline { margin-top: var(--space-4); }
 .timeline li {
   display: grid;
   grid-template-columns: 9rem 1fr;
